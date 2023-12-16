@@ -1,16 +1,26 @@
-const startingMinutes = 5;
-let time = startingMinutes * 60;
+var counter = 0;
+var timeleft = 300;
 
-const countdownEl = document.getElementById('countdown');
+function convertSeconds(s) {
+    var min = floor(s / 60);
+    var sec = s % 60; 
+    return nf(min, 2) + ':' + nf(sec, 2); 
+}
 
-setInterval(updateCountdown, 1000);
+function setup(){
+    noCanvas();
 
-function updateCountdown(){
-    const minutes = Math.floor(time / 60);
-    let seconds = time % 60; 
+    var timer = select('#timer');
+    timer.html(convertSeconds(timeleft - counter));
 
-    seconds = seconds < 5 ? '0' + seconds : seconds; 
+    var interval = setInterval(timeIt, 1000);
 
-    countdownEl.innerHTML = `${minutes}: ${seconds}`; 
-    time--;
+    function timeIt(){
+        counter++;
+        timer.html(convertSeconds(timeleft - counter));
+
+        if(counter == timeleft){
+            clearInterval(interval);
+        }
+}
 }

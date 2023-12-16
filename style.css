@@ -1,19 +1,23 @@
-
-
 body{
-    background-color: black;
-    font-family: "Helvetica", "Arial", sans-serif;
+    font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+    font-weight: normal;
     margin: 0;
 }
 
 p{
-    background-color: #fff;
+    background-color: #eeeded;
+    background-size: cover;
+    background-position: 100%;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 50px;
+    font-size: 100px;
     margin: 0;
-    height: 70px;
-    width:200px;
+    height: 100%;
+    width: 100%;
 
+}
+
+img {
+    width: 100%;
 }
